@@ -35,7 +35,8 @@ Antes de executar o projeto, você precisará ter o Python e o pip instalados em
 4. Crie um ambiente virtual (opcional, mas recomendado): 
     ```bash
     python -m venv venv 
-    venv/bin/activate
+    venv\Scripts\activate  # No windows
+    source venv/bin/activate  # No Linux ou MacOS
 
 5. Instale as dependências necessárias:
     ```bash
