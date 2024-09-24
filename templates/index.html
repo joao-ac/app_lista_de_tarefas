@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Gerenciador de Tarefas</h1>
+    <form action="/add" method="POST">
+        <input type="text" name="title" placeholder="Nova tarefa" required>
+        <textarea name="description" placeholder="Descrição da tarefa"></textarea>
+        <button type="submit">Adicionar</button>
+    </form>
+    
+    
+
+    <ul>
+        {% for task in tasks %}
+            <li class="{% if task.status %}completed{% endif %}">
+                <strong>{{ task.title }}</strong> <br>
+                <small>{{ 'Concluída' if task.status else 'Pendente' }}</small> <br>
+                <div class="description" style="display: none;">
+                    {{ task.description }}
+                </div>
+                <button class="toggle-description">Ver mais</button> <!-- Botão para expandir/contrair -->
+                <br>
+                <div>
+                    <a href="{{ url_for('update_task', task_id=task.id) }}">Alterar Status</a>
+                    <a href="{{ url_for('delete_task', task_id=task.id) }}">Excluir</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    
+
+</body>
+<script>
+    document.querySelectorAll('.toggle-description').forEach(button => {
+        button.addEventListener('click', () => {
+            const description = button.previousElementSibling; // Seleciona o elemento de descrição
+            if (description.style.display === 'none') {
+                description.style.display = 'block'; // Mostra a descrição
+                button.textContent = 'Ver menos'; // Altera o texto do botão
+            } else {
+                description.style.display = 'none'; // Esconde a descrição
+                button.textContent = 'Ver mais'; // Altera o texto do botão
+            }
+        });
+    });
+    </script>
+</html>

@@ -1,0 +1,116 @@
+/* Reset básico para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilizando o título */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilo do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo do input e textarea */
+input[type="text"],
+textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo do botão */
+button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Estilizando a lista de tarefas */
+ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Estilo de cada tarefa */
+li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilo do status de cada tarefa */
+li small {
+    color: #888;
+    font-style: italic;
+}
+
+/* Links para alterar e excluir */
+a {
+    margin-left: 10px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilizando tarefas concluídas */
+.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.description {
+    margin-top: 10px; /* Espaçamento entre o título e a descrição */
+    color: #555; /* Cor da descrição */
+}
+
+.toggle-description {
+    margin-top: 5px; /* Espaçamento acima do botão */
+    background-color: #007BFF; /* Cor do botão */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toggle-description:hover {
+    background-color: #0056b3; /* Cor do botão ao passar o mouse */
+}
