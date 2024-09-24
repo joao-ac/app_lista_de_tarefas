@@ -26,11 +26,11 @@ Antes de executar o projeto, você precisará ter o Python e o pip instalados em
 
 1. Clone este repositório para sua máquina local:
    ```bash
-    git clone https://github.com/seu-usuario/gerenciador-de-tarefas.git
+    git clone https://github.com/joao-ac/app_lista_de_tarefas.git
 
 2. Navegue até o diretório do projeto:
    ```bash
-   cd gerenciador-de-tarefas
+   cd app_lista_de_tarefas
 
 4. Crie um ambiente virtual (opcional, mas recomendado): 
     ```bash
